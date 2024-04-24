@@ -1,3 +1,3 @@
 public class Exercise {
-    public Exercise name;
+    public ExerciseName exerciseName;
 }
