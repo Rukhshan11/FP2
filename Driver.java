@@ -21,7 +21,7 @@ public class Driver {
         // This is all I need!
         Gson gson = new Gson();
         Exercise e = gson.fromJson(data, Exercise.class);
-        System.out.println(e.exerciseName);
+        System.out.println(e);
 
 
     }
