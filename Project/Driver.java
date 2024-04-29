@@ -1,3 +1,5 @@
+package Project;
+
 import javafx.application.Application;
 //import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,7 +56,7 @@ public class Driver extends Application {
         String apiKey = "hjlQDAYx2hi5XZF/LM6trw==RzGY8tGOf1AJskZ1";
         
         Gson gson = new Gson();
-        //Exercise ex = gson.fromJson("""
+        //Project.Exercise ex = gson.fromJson("""
                 //{
                      
                     //"name": "Rickshaw Carry",
@@ -65,12 +67,12 @@ public class Driver extends Application {
                     //"instructions": "Position the frame at the starting point, and load with the appropriate weight. Standing in the center of the frame, begin by gripping the handles and driving through your heels to lift the frame. Ensure your chest and head are up and your back is straight. Immediately begin walking briskly with quick, controlled steps. Keep your chest up and head forward, and make sure you continue breathing. Bring the frame to the ground after you have reached the end point."
                   
                 //}
-                 //""", Exercise.class);
+                 //""", Project.Exercise.class);
 
         // Show me this parses
         // Be sure you submit all of your supporting classes as well
         // This is all I need!
-        //System.out.println("Exercise Name: " + ex.getName());
+        //System.out.println("Project.Exercise Name: " + ex.getName());
         //System.out.println("Instructions: " + ex.getInstructions());
         //System.out.println("Difficulty: " + ex.getDifficulty());
         
@@ -87,7 +89,7 @@ public class Driver extends Application {
             Exercise[] exercise = gson.fromJson(response.body(), Exercise[].class);
 
             for (Exercise ex : exercise) {
-               System.out.println("Exercise Name: " + ex.getName());
+               System.out.println("Project.Exercise Name: " + ex.getName());
                System.out.println("Instructions: " + ex.getInstructions());
                System.out.println("Difficulty: " + ex.getDifficulty());
                System.out.println();

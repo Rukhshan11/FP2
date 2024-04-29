@@ -1,3 +1,5 @@
+package Project;
+
 public class Exercise {
     public String name;
     public String type;
