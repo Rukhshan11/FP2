@@ -39,11 +39,11 @@ public class Driver extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //Load the GUI from FXML built in Scene Builder
-        //Parent root = FXMLLoader.load(getClass().getResource("DemoView.fxml"));
-        //Scene scene = new Scene(root);
-        //stage.setTitle("Demo JavaFX with Scene BUilder");
-        //stage.setScene(scene);
-        //stage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("LearnPage.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("Demo JavaFX with Scene BUilder");
+        stage.setScene(scene);
+        stage.show();
         
         retrieveExerciseData();
         
