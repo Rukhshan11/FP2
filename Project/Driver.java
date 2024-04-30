@@ -51,7 +51,16 @@ public class Driver extends Application {
      }
      
      private void retrieveExerciseData() {
-        String muscle = "forearms";
+
+         HttpRequest request = HttpRequest.newBuilder()
+              .uri(URI.create("https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=biceps"))
+              .header("X-RapidAPI-Key", "39279d9661msh9bfa92e43ee23ddp1b0c61jsn2a3a79b77785")
+              .header("X-RapidAPI-Host", "exercises-by-api-ninjas.p.rapidapi.com")
+              .method("GET", HttpRequest.BodyPublishers.noBody())
+              .build();
+      HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+      System.out.println(response.body());
+        /*String muscle = "forearms";
         String apiKey = "hjlQDAYx2hi5XZF/LM6trw==RzGY8tGOf1AJskZ1";
 
         Gson gson = new Gson();
@@ -73,9 +82,9 @@ public class Driver extends Application {
         // This is all I need!
         //System.out.println("Project.Exercise Name: " + ex.getName());
         //System.out.println("Instructions: " + ex.getInstructions());
-        //System.out.println("Difficulty: " + ex.getDifficulty());
+        //System.out.println("Difficulty: " + ex.getDifficulty());*/
 
-        try {
+        /*try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                   .uri(new URI("https://api.api-ninjas.com/v1/exercises?muscle=" + muscle))
@@ -92,8 +101,7 @@ public class Driver extends Application {
                System.out.println("Instructions: " + ex.getInstructions());
                System.out.println("Difficulty: " + ex.getDifficulty());
                System.out.println();
-        }
-
+        }*
           } 
         
            catch (IOException | InterruptedException | URISyntaxException e) {
@@ -101,7 +109,7 @@ public class Driver extends Application {
         
           }
           
-        Platform.exit();
+        Platform.exit();*/
         
      }
      
