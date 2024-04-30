@@ -60,6 +60,12 @@ public class Driver extends Application {
               .build();
       HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
       System.out.println(response.body());
+         Gson gson = new Gson();
+      Exercise[] responseObject = gson.fromJson(responseBody, Exercise[].class);
+
+     
+      // Example: Printing the converted JSON response
+      System.out.println(gson.toJson(responseObject));
         /*String muscle = "forearms";
         String apiKey = "hjlQDAYx2hi5XZF/LM6trw==RzGY8tGOf1AJskZ1";
 
