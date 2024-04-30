@@ -33,7 +33,6 @@ import javafx.stage.Stage;
 
 public class Driver extends Application {
 
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -51,7 +50,7 @@ public class Driver extends Application {
         
      }
      
-     /*private void retrieveExerciseData() {
+     private void retrieveExerciseData() {
         String muscle = "forearms";
         String apiKey = "hjlQDAYx2hi5XZF/LM6trw==RzGY8tGOf1AJskZ1";
 
@@ -104,6 +103,6 @@ public class Driver extends Application {
           
         Platform.exit();
         
-     }*/
+     }
      
 }

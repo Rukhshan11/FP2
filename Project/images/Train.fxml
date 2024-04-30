@@ -26,7 +26,7 @@
                <children>
                   <ImageView accessibleRole="BUTTON" fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/Learn.png" />
+                        <Image url="@Learn.png" />
                      </image>
                   </ImageView>
                   <Button blendMode="SOFT_LIGHT" layoutX="-6.0" layoutY="-2.0" mnemonicParsing="false" onAction="#go_to_Learn" prefHeight="76.0" prefWidth="86.0" text="Learn" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-2.0" />
@@ -35,7 +35,7 @@
          </buttons></ButtonBar>
       <ImageView fitHeight="76.0" fitWidth="67.0" layoutX="5.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/TrainTop.jpg" />
+            <Image url="@TrainTop.jpg" />
          </image>
       </ImageView>
       <Label layoutX="94.0" layoutY="33.0" prefHeight="49.0" prefWidth="107.0" text="Train" textFill="#27837d" textOverrun="LEADING_ELLIPSIS">
@@ -49,7 +49,7 @@
                <children>
                   <ImageView accessibleRole="BUTTON" fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/Train.png" />
+                        <Image url="@Train.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="SE_RESIZE" />
