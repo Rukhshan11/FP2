@@ -41,7 +41,7 @@ public class Driver extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //Load the GUI from FXML built in Scene Builder
-        Parent root = FXMLLoader.load(getClass().getResource("LearnPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Train.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Demo JavaFX with Scene BUilder");
         stage.setScene(scene);

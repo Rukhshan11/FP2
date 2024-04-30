@@ -42,7 +42,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <BottomNavigation style="-fx-background-color: white;">
          <BottomNavigationButton>
@@ -83,6 +83,6 @@
       </Label>
    </top>
    <center>
-      <TextArea fx:id="ApiContent" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="ApiContent" prefHeight="415.0" prefWidth="337.0" BorderPane.alignment="CENTER" />
    </center>
 </View>
