@@ -36,6 +36,7 @@ public class FXMLController {
 
     @FXML
     private Label exerciseName;
+    
     @FXML
     private AnchorPane exerciseCheckBox;
 
