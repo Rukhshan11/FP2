@@ -31,12 +31,12 @@
                </children>
             </AnchorPane>
          </buttons></ButtonBar>
-      <ImageView fitHeight="94.0" fitWidth="130.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="94.0" fitWidth="130.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/135402849-soccer-training-line-icon-linear-style-sign-for-mobile-concept-and-web-design-traffic-cone-and.jpg" />
+            <Image url="@images/TrainTop.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="94.0" layoutY="33.0" prefHeight="49.0" prefWidth="107.0" text="Train" textFill="#27837d" textOverrun="LEADING_ELLIPSIS">
+      <Label layoutX="112.0" layoutY="33.0" prefHeight="49.0" prefWidth="107.0" style="-fx-font-weight: Bold;" text="Train" textFill="#27837d" textOverrun="LEADING_ELLIPSIS">
          <font>
             <Font name="Charter Black" size="30.0" />
          </font>

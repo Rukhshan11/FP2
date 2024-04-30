@@ -44,7 +44,7 @@ public class FXMLController {
    // private ImageView TrainPage;
    public void go_to_driver() throws Exception {
         //Load the GUI from FXML built in Scene Builder
-        Stage stage = (Stage) addbutton.getScene().getWindow;
+        Stage stage = (Stage) Learn.getScene().getWindow;
         stage.close();
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("Driver.fxml"));
