@@ -47,25 +47,25 @@ public class Driver extends Application {
         stage.setScene(scene);
         stage.show();
         
-        retrieveExerciseData();
+        //retrieveExerciseData();
         
      }
      
-     private void retrieveExerciseData() {
+     /*private void retrieveExerciseData() {
         String muscle = "forearms";
         String apiKey = "hjlQDAYx2hi5XZF/LM6trw==RzGY8tGOf1AJskZ1";
-        
+
         Gson gson = new Gson();
         //Project.Exercise ex = gson.fromJson("""
                 //{
-                     
+
                     //"name": "Rickshaw Carry",
                     //"type": "strongman",
                     //"muscle": "forearms",
                     //"equipment": "other",
                     //"difficulty": "beginner",
                     //"instructions": "Position the frame at the starting point, and load with the appropriate weight. Standing in the center of the frame, begin by gripping the handles and driving through your heels to lift the frame. Ensure your chest and head are up and your back is straight. Immediately begin walking briskly with quick, controlled steps. Keep your chest up and head forward, and make sure you continue breathing. Bring the frame to the ground after you have reached the end point."
-                  
+
                 //}
                  //""", Project.Exercise.class);
 
@@ -75,7 +75,7 @@ public class Driver extends Application {
         //System.out.println("Project.Exercise Name: " + ex.getName());
         //System.out.println("Instructions: " + ex.getInstructions());
         //System.out.println("Difficulty: " + ex.getDifficulty());
-        
+
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -83,7 +83,7 @@ public class Driver extends Application {
                   .header("x-api-key", apiKey)
                   .GET()
                   .build();
-                  
+
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             Exercise[] exercise = gson.fromJson(response.body(), Exercise[].class);
@@ -93,8 +93,8 @@ public class Driver extends Application {
                System.out.println("Instructions: " + ex.getInstructions());
                System.out.println("Difficulty: " + ex.getDifficulty());
                System.out.println();
-        } 
-        
+        }
+
           } 
         
            catch (IOException | InterruptedException | URISyntaxException e) {
@@ -104,6 +104,6 @@ public class Driver extends Application {
           
         Platform.exit();
         
-     }
+     }*/
      
 }
