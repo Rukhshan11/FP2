@@ -26,6 +26,9 @@ import java.net.URL;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 import com.google.gson.Gson;
 import javafx.stage.Stage;
 
@@ -38,85 +41,30 @@ public class Driver extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
-        //Load the GUI from FXML built in Scene Builder
-        Parent root = FXMLLoader.load(getClass().getResource("Learn.fxml"));
+    public void start(Stage stage) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=biceps"))
+                .header("X-RapidAPI-Key", "39279d9661msh9bfa92e43ee23ddp1b0c61jsn2a3a79b77785")
+                .header("X-RapidAPI-Host", "exercises-by-api-ninjas.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        String responseBody = response.body();
+
+        Gson gson = new Gson();
+
+        Exercise[] exercisesJsonArray = gson.fromJson(responseBody, Exercise[].class);
+        List<Exercise> exercises = Arrays.asList(exercisesJsonArray);
+        System.out.println(exercises);
+
+
+        Parent root = FXMLLoader.load(getClass().getResource("/Project/Learn.fxml"));
+
         Scene scene = new Scene(root);
         stage.setTitle("Demo JavaFX with Scene BUilder");
         stage.setScene(scene);
         stage.show();
-        
-        //retrieveExerciseData();
-        
-     }
-     
-     private void retrieveExerciseData() {
 
-         HttpRequest request = HttpRequest.newBuilder()
-              .uri(URI.create("https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=biceps"))
-              .header("X-RapidAPI-Key", "39279d9661msh9bfa92e43ee23ddp1b0c61jsn2a3a79b77785")
-              .header("X-RapidAPI-Host", "exercises-by-api-ninjas.p.rapidapi.com")
-              .method("GET", HttpRequest.BodyPublishers.noBody())
-              .build();
-      HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-      System.out.println(response.body());
-         Gson gson = new Gson();
-      Exercise[] responseObject = gson.fromJson(responseBody, Exercise[].class);
 
-     
-      // Example: Printing the converted JSON response
-      System.out.println(gson.toJson(responseObject));
-        /*String muscle = "forearms";
-        String apiKey = "hjlQDAYx2hi5XZF/LM6trw==RzGY8tGOf1AJskZ1";
-
-        Gson gson = new Gson();
-        //Project.Exercise ex = gson.fromJson("""
-                //{
-
-                    //"name": "Rickshaw Carry",
-                    //"type": "strongman",
-                    //"muscle": "forearms",
-                    //"equipment": "other",
-                    //"difficulty": "beginner",
-                    //"instructions": "Position the frame at the starting point, and load with the appropriate weight. Standing in the center of the frame, begin by gripping the handles and driving through your heels to lift the frame. Ensure your chest and head are up and your back is straight. Immediately begin walking briskly with quick, controlled steps. Keep your chest up and head forward, and make sure you continue breathing. Bring the frame to the ground after you have reached the end point."
-
-                //}
-                 //""", Project.Exercise.class);
-
-        // Show me this parses
-        // Be sure you submit all of your supporting classes as well
-        // This is all I need!
-        //System.out.println("Project.Exercise Name: " + ex.getName());
-        //System.out.println("Instructions: " + ex.getInstructions());
-        //System.out.println("Difficulty: " + ex.getDifficulty());*/
-
-        /*try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                  .uri(new URI("https://api.api-ninjas.com/v1/exercises?muscle=" + muscle))
-                  .header("x-api-key", apiKey)
-                  .GET()
-                  .build();
-
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            Exercise[] exercise = gson.fromJson(response.body(), Exercise[].class);
-
-            for (Exercise ex : exercise) {
-               System.out.println("Project.Exercise Name: " + ex.getName());
-               System.out.println("Instructions: " + ex.getInstructions());
-               System.out.println("Difficulty: " + ex.getDifficulty());
-               System.out.println();
-        }*
-          } 
-        
-           catch (IOException | InterruptedException | URISyntaxException e) {
-               e.printStackTrace();    
-        
-          }
-          
-        Platform.exit();*/
-        
-     }
-     
+    }
 }

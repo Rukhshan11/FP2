@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ProjectResources">
+    <resource url="http://javafx.com/javafx/21" location="$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home!/java.xml/jdk/xml/internal/jdkcatalog/java/dtd/preferences.dtd" />
+    <xml-schema-version>XMLSchema_1_1</xml-schema-version>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="22" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

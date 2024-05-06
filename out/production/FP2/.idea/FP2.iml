@@ -8,17 +8,6 @@
     <content url="jar://$USER_HOME$/Downloads/gson-2.9.0 (1).jar!/" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="eclipsesource.jaxrs.provider.gson" level="project" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/Project/javafx-sdk-22.0.1" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/Project/javafx-sdk-22.0.1" recursive="false" />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="openjfx.javafx.fxml" type="repository">
         <properties maven-id="org.openjfx:javafx-fxml:17.0.1" />
@@ -36,14 +25,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/gson-2.9.0 (1).jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="gson-2.9.0" level="project" />
+    <orderEntry type="library" exported="" name="google.code.gson" level="project" />
+    <orderEntry type="library" exported="" name="javafx-sdk-22.0" level="project" />
   </component>
 </module>

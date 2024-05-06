@@ -3,83 +3,77 @@ package Project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 
-import java.awt.*;
-import java.util.ResourceBundle;
-import java.util.Date;
-import java.util.prefs.Preferences;
-import java.text.SimpleDateFormat;
-import javafx.application.Platform;
-import javafx.scene.layout.AnchorPane;
+
+import java.util.List;
+
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
-import java.net.URL;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.io.IOException;
-
-public class FXMLController {
+public class FXMLController  {
 
     @FXML
     private Stage stage;
+    @FXML
+    private Label exerciseLabel;
 
     @FXML
-    private Label exerciseName;
-    
-    @FXML
-    private AnchorPane exerciseCheckBox;
+    private VBox exerciseVBox;
 
     @FXML
-    private Button Learn;
-    
-    @FXML
-    private Button Train;
+    private Label nameLabel;
 
     @FXML
-    private TextArea ApiContent;
-    
-    //public void displayApiContent(String apiContent) {
-    //  ApiContent.setText(apiContent);
+    private Label typeLabel;
 
-   // @FXML
-   // private ImageView LearnPage;
+    @FXML
+    private Label instructionsLabel;
+    public List<Exercise> exercises;
 
-   // @FXML
-   // private ImageView TrainPage;
-   public void go_to_Learn(ActionEvent event) throws Exception {
-       Parent root = FXMLLoader.load(getClass().getResource("Learn.fxml"));
-       stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-       Scene scene = new Scene(root);
-       stage.setScene(scene);
-       stage.show();
-       
-   }
+    public void initialize() {
+      for (Exercise exercise : exercises) {
+         nameLabel.setText(exercise.name);
+           typeLabel.setText(exercise.type);
+           instructionsLabel.setText(exercise.instructions);
+           VBox exerciseDetailsVBox = new VBox(nameLabel, typeLabel, instructionsLabel);
+           exerciseVBox.getChildren().add(exerciseDetailsVBox);
 
-    public void go_to_Train(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Train.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            }
 
-    }
-    
-   /* public void initialize() {
-        // Simulating data retrieval from Sample class
-        Exercise sample = new Exercise();
-        String name = sample.getName();
-        exerciseName.setText(Exercise.);
-        // Set the data to the ListView
-    }*/
+        }
+
+        public void go_to_Learn (ActionEvent event) throws Exception {
+            Parent root = FXMLLoader.load(getClass().getResource("Learn.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+       public void go_to_Train (ActionEvent event) throws Exception {
+           Parent root = FXMLLoader.load(getClass().getResource("Train.fxml"));
+           stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           Scene scene = new Scene(root);
+           stage.setScene(scene);
+           stage.show();
+
+        }
+
+
 }
+
+    
+
+    /* public void initialize() {
+         // Simulating data retrieval from Sample class
+         Exercise sample = new Exercise();
+         String name = sample.getName();
+         exerciseName.setText(Exercise.);
+         // Set the data to the ListView
+     }*/
+
